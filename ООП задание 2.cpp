@@ -76,40 +76,33 @@ int EMPLOYEE::count = 0;
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	EMPLOYEE emp1("Nadya", 17, "REU", 1, "Student", 2000, 1 'w',);
-	EMPLOYEE emp2("Kate", 18, "REU", 32, "Student", 2000, 1 'w');
-	EMPLOYEE emp3("Anton", 19, "Adidas", 2, "Manager", 30000, 2 'm', );
+	EMPLOYEE object1("Nadya", 17, "REU", 1, "Student", 2000, 1 'w',);
+	EMPLOYEE object2("Kate", 18, "REU", 32, "Student", 2000, 1 'w');
+	EMPLOYEE object3("Anton", 19, "Adidas", 2, "Manager", 30000, 2 'm', );
 	
-	const int len = 3;
-    EMPLOYEE mas[len] = { emp1, emp2, emp3 };// Создание массива объектов класса EMPLOYEE.
-	emp1.showCount();
-	cout << endl;
-	cout << "Личные данные и информация о работе " << endl;
-	cout << endl;
-	for (int i = 0; i < len; i++) {
-		mas[i].ShowPrivate();
-		mas[i].ShowWork();
-	}
-	double raise_salary;
-	cout << "Введите начисление зарплаты ";
-	cin >> raise_salary;
-	cout << endl;
-	cout << "Зарплата 1 человека ";
-	mas[0].AccrualofSalary(raise_salary);
-	cout << "Зарплата 2 человека ";
-	mas[1].AccrualofSalary(raise_salary);
-	cout << "Зарплата 3 человека ";
-	mas[3].AccrualofSalary(raise_salary);
-	cout << endl;
-	mas[0] = mas[1];
-	mas[0].Comparison(mas[1]);
-	cout << endl;
-	for (int i = 0; i < len; i++) {
-		mas[i].ShowPrivate();
-		mas[i].ShowWork();
-	}
-	cout << endl;
-	return 0;
+EMPLOYEE employees[3] = { object1, object2, object3 };
+
+ cout << "Насчитывается " << EMPLOYEE::GetCount() << " сотрудника." << endl << endl;
+    for (int i = 0; i < 3; i++) 
+    {
+ employees[i].GetPersonalInfo();
+ employees[i].GetWorkInfo();
+        cout << endl;
+    }
+    cout << endl;
+ employees[2].SetSalary(50000); // Повышаем зарплату третьего сотрудника на 50000
+    cout << endl;
+ employees[0].ExpComparsion(employees[1]); // Сравниваем опыт двух сотрудников
+    cout << endl;
+ employees[2].ObjectAssigment(employees[0]); // Присваиваем должность первого сотрудника третьему
+    cout << endl;
+
+    for (int i = 0; i < 3; i++)
+    {
+ employees[i].GetPersonalInfo();
+ employees[i].GetWorkInfo();
+        cout << endl;
+    }
 }
 
 
