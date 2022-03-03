@@ -76,9 +76,9 @@ int EMPLOYEE::count = 0;
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	EMPLOYEE object1("Nadya", 17, "REU", 1, "Student", 2000, 1 'w',);
-	EMPLOYEE object2("Kate", 18, "REU", 32, "Student", 2000, 1 'w');
-	EMPLOYEE object3("Anton", 19, "Adidas", 2, "Manager", 30000, 2 'm', );
+	EMPLOYEE object1("Nadya", 17, "REU", 1, "Student", 2000, 1 "w",);
+	EMPLOYEE object2("Kate", 18, "REU", 32, "Student", 2000, 1 "w");
+	EMPLOYEE object3("Anton", 19, "Adidas", 2, "Manager", 30000, 2 "m", );
 	
 EMPLOYEE employees[3] = { object1, object2, object3 };
 
